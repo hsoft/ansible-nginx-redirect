@@ -1,0 +1,16 @@
+_nginx_redirect_item:
+  # domain name we listen to (server_name in nginx). Example: example.com
+  from: ""
+  # domain name we redirect to. Example: www.example.com
+  to: ""
+  # If set, we generate an extra rule for https.
+  # We expect the nginx snippet at snippets/{{ from }}.conf to exist and set proper SSL certs.
+  # See https://github.com/hsoft/ansible-acme-nginx
+  ssl: no
+
+# List of nginx redirects to install. Each item has the structure of _nginx_redirect_item
+nginx_redirects: []
+
+# Whether we include the acme_well_known snippet from https://github.com/hsoft/ansible-acme-nginx
+# should be included by our redirect directive so that it answers ACME challenges.
+nginx_redirect_include_acme_well_known_snippet: no
