@@ -4,5 +4,5 @@
     dest: /etc/nginx/sites-enabled/redirect.conf
     owner: www-data
     group: www-data
-  when: "{{ nginx_redirects }}"
+  when: nginx_redirects
   notify: nginx restart
